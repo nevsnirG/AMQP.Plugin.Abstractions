@@ -1,0 +1,8 @@
+C:\Users\Ken\Documents\Visual Studio 2019\Projects\AMQP\AMQP.Plugin\bin\Debug\netstandard2.1\AMQP.Plugin.deps.json
+C:\Users\Ken\Documents\Visual Studio 2019\Projects\AMQP\AMQP.Plugin\bin\Debug\netstandard2.1\AMQP.Plugin.dll
+C:\Users\Ken\Documents\Visual Studio 2019\Projects\AMQP\AMQP.Plugin\bin\Debug\netstandard2.1\AMQP.Plugin.pdb
+C:\Users\Ken\Documents\Visual Studio 2019\Projects\AMQP\AMQP.Plugin\obj\Debug\netstandard2.1\AMQP.Plugin.csprojAssemblyReference.cache
+C:\Users\Ken\Documents\Visual Studio 2019\Projects\AMQP\AMQP.Plugin\obj\Debug\netstandard2.1\AMQP.Plugin.AssemblyInfoInputs.cache
+C:\Users\Ken\Documents\Visual Studio 2019\Projects\AMQP\AMQP.Plugin\obj\Debug\netstandard2.1\AMQP.Plugin.AssemblyInfo.cs
+C:\Users\Ken\Documents\Visual Studio 2019\Projects\AMQP\AMQP.Plugin\obj\Debug\netstandard2.1\AMQP.Plugin.dll
+C:\Users\Ken\Documents\Visual Studio 2019\Projects\AMQP\AMQP.Plugin\obj\Debug\netstandard2.1\AMQP.Plugin.pdb

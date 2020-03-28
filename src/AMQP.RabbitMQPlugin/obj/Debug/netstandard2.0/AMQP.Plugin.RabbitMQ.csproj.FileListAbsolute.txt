@@ -1,0 +1,4 @@
+C:\Users\Ken\Documents\Visual Studio 2019\Projects\AMQP\AMQP.Plugin.RabbitMQ\bin\Debug\netstandard2.0\AMQP.Plugin.RabbitMQ.deps.json
+C:\Users\Ken\Documents\Visual Studio 2019\Projects\AMQP\AMQP.Plugin.RabbitMQ\bin\Debug\netstandard2.0\AMQP.Plugin.RabbitMQ.dll
+C:\Users\Ken\Documents\Visual Studio 2019\Projects\AMQP\AMQP.Plugin.RabbitMQ\obj\Debug\netstandard2.0\AMQP.Plugin.RabbitMQ.AssemblyInfoInputs.cache
+C:\Users\Ken\Documents\Visual Studio 2019\Projects\AMQP\AMQP.Plugin.RabbitMQ\obj\Debug\netstandard2.0\AMQP.Plugin.RabbitMQ.AssemblyInfo.cs

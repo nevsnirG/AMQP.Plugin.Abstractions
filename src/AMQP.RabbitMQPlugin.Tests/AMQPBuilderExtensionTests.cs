@@ -16,7 +16,7 @@ namespace AMQP.RabbitMQPlugin.Tests
             IAMQPBuilder builder = null;
 
             //Act
-            var action = new Action(() => builder.RegisterRabbitMQ());
+            var action = new Action(() => builder.Build());
 
             //Assert
             Assert.Throws<ArgumentNullException>(nameof(builder), action);
@@ -36,7 +36,7 @@ namespace AMQP.RabbitMQPlugin.Tests
             var builder = builderMock.Object;
 
             //Act
-            var action = new Action(() => builder.RegisterRabbitMQ());
+            var action = new Action(() => builder.Build());
 
             //Assert
             Assert.Throws<ArgumentException>(nameof(builder), action);
@@ -53,7 +53,7 @@ namespace AMQP.RabbitMQPlugin.Tests
             var builder = builderMock.Object;
 
             //Act
-            builder.RegisterRabbitMQ();
+            builder.Build();
 
             //Assert
             var provider = builder.Services.BuildServiceProvider();

@@ -34,6 +34,7 @@ namespace AMQP.RabbitMQPlugin
                 throw new ObjectDisposedException(nameof(_connection));
             //TODO - Handle possible CreateModel exceptions.
             var model = _connection.CreateModel();
+            model.ExchangeDeclare(_exchange, RabbitMQ.Client.ExchangeType.Topic, false, false, null); //TODO - Handle possible exceptions.
             return new RabbitMQClient(_exchange, routingKey, model);
         }
 

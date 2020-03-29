@@ -49,9 +49,13 @@ namespace AMQP.RabbitMQPlugin
                 queue = _model.QueueDeclare(queue ?? string.Empty, false, true, true, null).QueueName;
             }
 
+            _model.QueueBind(queue, _exchange, _routingKey, null);
+
             var consumer = new EventingBasicConsumer(_model);
             consumer.Received += (sender, e) =>
             {
+                _model.BasicAck(e.DeliveryTag, false);
+
                 //TODO - Add other properties from original eventargs.
                 var eventArgs = new MessageReceivedEventArgs(e.Body);
                 onMessageReceivedHandler.Invoke(this, eventArgs);
@@ -60,10 +64,10 @@ namespace AMQP.RabbitMQPlugin
             _model.BasicConsume(queue, false, consumer);
         }
 
-        public void RegisterConsumer(OnMessageReceivedHandler onMessageReceivedEventHandler)
-        {
-            RegisterConsumer(null, onMessageReceivedEventHandler);
-        }
+        //public void RegisterConsumer(OnMessageReceivedHandler onMessageReceivedEventHandler)
+        //{
+        //    RegisterConsumer(null, onMessageReceivedEventHandler);
+        //}
 
         public void Dispose()
         {

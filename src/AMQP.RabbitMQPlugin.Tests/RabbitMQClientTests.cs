@@ -1,4 +1,5 @@
 ﻿using AMQP.Plugin;
+using AMQP.Plugin.Extensions;
 using Moq;
 using RabbitMQ.Client;
 using System;
@@ -18,6 +19,8 @@ namespace AMQP.RabbitMQPlugin.Tests
         private readonly Expression<Func<IModel, string>> _basicConsumeExpression;
         private readonly Expression<Func<RabbitMQ.Client.IConnection, IModel>> _createModelExpression;
         private readonly Expression<Action<IModel>> _basicPublishExpression;
+        private readonly Expression<Action<IModel>> _queueBindExpression;
+        private readonly Expression<Action<IModel>> _exchangeDeclareExpression;
 
         public RabbitMQClientTests()
         {
@@ -27,6 +30,8 @@ namespace AMQP.RabbitMQPlugin.Tests
             _basicConsumeExpression = (model) => model.BasicConsume(It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<bool>(), It.IsAny<IDictionary<string, object>>(), It.IsAny<IBasicConsumer>());
             _createModelExpression = (connection) => connection.CreateModel();
             _basicPublishExpression = (model) => model.BasicPublish(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<IBasicProperties>(), It.IsAny<byte[]>());
+            _queueBindExpression = (model) => model.QueueBind(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<IDictionary<string, object>>());
+            _exchangeDeclareExpression = (model) => model.ExchangeDeclare(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<bool>(), It.IsAny<IDictionary<string, object>>());
 
             _modelMock = new Mock<IModel>(MockBehavior.Strict);
             _modelMock.Setup(_disposeExpression)
@@ -44,6 +49,10 @@ namespace AMQP.RabbitMQPlugin.Tests
                 .Returns("tag")
                 .Verifiable();
             _modelMock.Setup(_basicPublishExpression)
+                .Verifiable();
+            _modelMock.Setup(_queueBindExpression)
+                .Verifiable();
+            _modelMock.Setup(_exchangeDeclareExpression)
                 .Verifiable();
 
             _connectionMock = new Mock<RabbitMQ.Client.IConnection>(MockBehavior.Strict);
@@ -122,6 +131,7 @@ namespace AMQP.RabbitMQPlugin.Tests
             //Assert
             Assert.Throws<ArgumentNullException>(nameof(body), action);
             _connectionMock.Verify(_createModelExpression);
+            _modelMock.Verify(_exchangeDeclareExpression);
         }
 
         [Fact]
@@ -143,6 +153,7 @@ namespace AMQP.RabbitMQPlugin.Tests
             //Assert
             Assert.Throws<InvalidOperationException>(action);
             _connectionMock.Verify(_createModelExpression);
+            _modelMock.Verify(_exchangeDeclareExpression);
             _modelMock.Verify((model) => model.IsClosed);
         }
 
@@ -163,6 +174,7 @@ namespace AMQP.RabbitMQPlugin.Tests
             //Assert
             Assert.Throws<ObjectDisposedException>(action);
             _connectionMock.Verify(_createModelExpression);
+            _modelMock.Verify(_exchangeDeclareExpression);
             _modelMock.Verify(_disposeExpression, Times.Once);
         }
 
@@ -182,7 +194,7 @@ namespace AMQP.RabbitMQPlugin.Tests
             //Assert
             Assert.Throws<ArgumentNullException>(nameof(onMessageReceivedHandler), action);
             _connectionMock.Verify(_createModelExpression);
-            _connectionMock.Verify();
+            _modelMock.Verify(_exchangeDeclareExpression);
         }
 
         [Theory]
@@ -202,6 +214,7 @@ namespace AMQP.RabbitMQPlugin.Tests
 
             //Assert
             _connectionMock.Verify(_createModelExpression);
+            _modelMock.Verify(_exchangeDeclareExpression);
             _modelMock.Verify(_queueDeclareExpression);
             _modelMock.Verify(_basicConsumeExpression);
         }
@@ -220,6 +233,7 @@ namespace AMQP.RabbitMQPlugin.Tests
 
             //Assert
             _connectionMock.Verify(_createModelExpression);
+            _modelMock.Verify(_exchangeDeclareExpression);
             _modelMock.Verify(_queueDeclareExpression);
             _modelMock.Verify(_basicConsumeExpression);
         }
@@ -242,6 +256,7 @@ namespace AMQP.RabbitMQPlugin.Tests
 
             //Assert
             _connectionMock.Verify(_createModelExpression);
+            _modelMock.Verify(_exchangeDeclareExpression);
             _modelMock.Verify(_isClosedExpression);
             _modelMock.Verify(_basicPublishExpression);
         }

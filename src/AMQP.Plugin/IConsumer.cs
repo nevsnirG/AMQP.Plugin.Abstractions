@@ -15,7 +15,7 @@ namespace AMQP.Plugin
     public interface IConsumer : IDisposable
     {
         /// <summary>
-        /// Register a consumer to the message queue.
+        /// Register a consumer to the message broker.
         /// </summary>
         /// <param name="queue">The queue to consume messages from.</param>
         /// <param name="onMessageReceived">The callback to invoke when a message is consumed.</param>

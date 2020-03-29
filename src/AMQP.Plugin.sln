@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMQP.RabbitMQPlugin", "AMQP
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{3DCE0A93-78AF-4EDD-A71C-2E04E6413E8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMQP.RabbitMQPlugin.Tests", "AMQP.RabbitMQPlugin.Tests\AMQP.RabbitMQPlugin.Tests.csproj", "{15A74D8E-3CA9-49FD-ACB3-38D7A9E5A399}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMQP.RabbitMQPlugin.Tests", "AMQP.RabbitMQPlugin.Tests\AMQP.RabbitMQPlugin.Tests.csproj", "{15A74D8E-3CA9-49FD-ACB3-38D7A9E5A399}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMQP.RabbitMQPlugin.IntegrationTests", "AMQP.RabbitMQPlugin.IntegrationTests\AMQP.RabbitMQPlugin.IntegrationTests.csproj", "{B5396241-80E6-4DF6-BCA0-8E26F9C11627}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{15A74D8E-3CA9-49FD-ACB3-38D7A9E5A399}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15A74D8E-3CA9-49FD-ACB3-38D7A9E5A399}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15A74D8E-3CA9-49FD-ACB3-38D7A9E5A399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5396241-80E6-4DF6-BCA0-8E26F9C11627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5396241-80E6-4DF6-BCA0-8E26F9C11627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5396241-80E6-4DF6-BCA0-8E26F9C11627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5396241-80E6-4DF6-BCA0-8E26F9C11627}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +51,7 @@ Global
 		{2B372533-095E-4AB0-B8E9-1B1ACBEEFCBC} = {DF64C4D0-C51E-46C4-B0CE-F27F17A6662F}
 		{D2BBE700-1DB5-421D-BD26-2A5D70E81BBC} = {3DCE0A93-78AF-4EDD-A71C-2E04E6413E8C}
 		{15A74D8E-3CA9-49FD-ACB3-38D7A9E5A399} = {DF64C4D0-C51E-46C4-B0CE-F27F17A6662F}
+		{B5396241-80E6-4DF6-BCA0-8E26F9C11627} = {DF64C4D0-C51E-46C4-B0CE-F27F17A6662F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9F8AF85C-3B7D-4955-AB19-815CE8A4A6D5}

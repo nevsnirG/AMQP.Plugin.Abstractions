@@ -7,6 +7,5 @@ namespace AMQP.Plugin
     public interface IConsumer : IDisposable
     {
         void RegisterConsumer(string queue, OnMessageReceivedHandler onMessageReceivedHandler);
-        void RegisterConsumer(OnMessageReceivedHandler onMessageReceivedHandler);
     }
 }

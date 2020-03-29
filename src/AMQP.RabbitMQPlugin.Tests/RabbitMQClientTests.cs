@@ -186,13 +186,13 @@ namespace AMQP.RabbitMQPlugin.Tests
             string routingKey = nameof(routingKey);
             var connection = new RabbitMQConnection(exchange, _connectionMock.Object);
             var consumer = connection.CreateConsumer(routingKey);
-            OnMessageReceivedHandler onMessageReceivedHandler = null;
+            OnMessageReceived onMessageReceived = null;
 
             //Act
-            var action = new Action(() => consumer.RegisterConsumer(onMessageReceivedHandler));
+            var action = new Action(() => consumer.RegisterConsumer(onMessageReceived));
 
             //Assert
-            Assert.Throws<ArgumentNullException>(nameof(onMessageReceivedHandler), action);
+            Assert.Throws<ArgumentNullException>(nameof(onMessageReceived), action);
             _connectionMock.Verify(_createModelExpression);
             _modelMock.Verify(_exchangeDeclareExpression);
         }

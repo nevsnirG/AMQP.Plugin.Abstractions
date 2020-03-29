@@ -5,8 +5,15 @@ using System;
 
 namespace AMQP.RabbitMQPlugin
 {
+    /// <summary>
+    /// Contains extension methods for the <see cref="IAMQPBuilder"/>.
+    /// </summary>
     public static class IAMQPBuilderExtension
     {
+        /// <summary>
+        /// Register a RabbitMQ message broker implementation.
+        /// </summary>
+        /// <param name="builder">The <see cref="IAMQPBuilder"/> containing the <see cref="IServiceCollection"/> to register to.</param>
         public static void RegisterRabbitMQ(this IAMQPBuilder builder)
         {
             if (builder is null)

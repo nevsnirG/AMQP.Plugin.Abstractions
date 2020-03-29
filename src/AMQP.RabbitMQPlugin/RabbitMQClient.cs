@@ -39,7 +39,7 @@ namespace AMQP.RabbitMQPlugin
             _model.BasicPublish(_exchange, _routingKey, false, null, body);
         }
 
-        public void RegisterConsumer(string queue, OnMessageReceivedHandler onMessageReceivedHandler)
+        public void RegisterConsumer(string queue, OnMessageReceived onMessageReceivedHandler)
         {
             if (onMessageReceivedHandler is null)
                 throw new ArgumentNullException(nameof(onMessageReceivedHandler));

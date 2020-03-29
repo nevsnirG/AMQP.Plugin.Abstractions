@@ -39,10 +39,10 @@ namespace AMQP.RabbitMQPlugin
             _model.BasicPublish(_exchange, _routingKey, false, null, body);
         }
 
-        public void RegisterConsumer(string queue, OnMessageReceived onMessageReceivedHandler)
+        public void RegisterConsumer(string queue, OnMessageReceived onMessageReceived)
         {
-            if (onMessageReceivedHandler is null)
-                throw new ArgumentNullException(nameof(onMessageReceivedHandler));
+            if (onMessageReceived is null)
+                throw new ArgumentNullException(nameof(onMessageReceived));
 
             lock (_lock)
             {
@@ -58,16 +58,11 @@ namespace AMQP.RabbitMQPlugin
 
                 //TODO - Add other properties from original eventargs.
                 var eventArgs = new MessageReceivedEventArgs(e.Body);
-                onMessageReceivedHandler.Invoke(this, eventArgs);
+                onMessageReceived.Invoke(this, eventArgs);
             };
             //TODO - Handle possible exceptions thrown by BasicConsume method.
             _model.BasicConsume(queue, false, consumer);
         }
-
-        //public void RegisterConsumer(OnMessageReceivedHandler onMessageReceivedEventHandler)
-        //{
-        //    RegisterConsumer(null, onMessageReceivedEventHandler);
-        //}
 
         public void Dispose()
         {

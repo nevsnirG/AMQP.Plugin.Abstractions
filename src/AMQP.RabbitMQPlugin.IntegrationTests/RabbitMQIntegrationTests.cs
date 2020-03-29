@@ -35,14 +35,14 @@ namespace AMQP.RabbitMQPlugin.IntegrationTests
             var expected = new byte[3] { 0x01, 0x02, 0x03 };
             byte[] actual = null;
             var mre = new ManualResetEvent(false);
-            void onMessageReceivedHandler(object sender, MessageReceivedEventArgs e)
+            void onMessageReceived(object sender, MessageReceivedEventArgs e)
             {
                 actual = e?.Body;
                 mre.Set();
             }
 
             //Act
-            consumer.RegisterConsumer(onMessageReceivedHandler);
+            consumer.RegisterConsumer(onMessageReceived);
             publisher.SendMessage(expected);
             var flagged = mre.WaitOne(Timeout.Infinite);
 

@@ -2,9 +2,9 @@
 {
     public static class IConsumerExtension
     {
-        public static void RegisterConsumer(this IConsumer consumer, OnMessageReceived onMessageReceivedHandler)
+        public static void RegisterConsumer(this IConsumer consumer, OnMessageReceived onMessageReceived)
         {
-            consumer.RegisterConsumer(null, onMessageReceivedHandler);
+            consumer.RegisterConsumer(null, onMessageReceived);
         }
     }
 }

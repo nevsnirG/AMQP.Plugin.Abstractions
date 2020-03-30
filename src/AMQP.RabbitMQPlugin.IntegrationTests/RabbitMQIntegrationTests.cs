@@ -1,10 +1,12 @@
 using AMQP.Plugin;
 using AMQP.Plugin.Extensions;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using Xunit;
 
 namespace AMQP.RabbitMQPlugin.IntegrationTests
 {
+    [ExcludeFromCodeCoverage]
     [Trait("Category", "SkipWhenLiveUnitTesting")]
     public class RabbitMQIntegrationTests
     {

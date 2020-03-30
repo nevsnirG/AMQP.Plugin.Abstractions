@@ -1,10 +1,12 @@
 using AMQP.Plugin.Exceptions;
 using Moq;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using Xunit;
 
 namespace AMQP.RabbitMQPlugin.Tests
 {
+    [ExcludeFromCodeCoverage]
     public class RabbitMQConnectionFactoryTests
     {
         [Theory]

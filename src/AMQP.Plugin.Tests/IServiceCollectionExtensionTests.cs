@@ -3,10 +3,12 @@ using AMQP.Plugin.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using Xunit;
 
 namespace AMQP.Plugin.Tests
 {
+    [ExcludeFromCodeCoverage]
     public class IServiceCollectionExtensionTests
     {
         [Fact]

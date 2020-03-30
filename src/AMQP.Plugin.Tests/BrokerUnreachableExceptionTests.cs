@@ -1,9 +1,11 @@
 ﻿using AMQP.Plugin.Exceptions;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using Xunit;
 
 namespace AMQP.Plugin.Tests
 {
+    [ExcludeFromCodeCoverage]
     public class BrokerUnreachableExceptionTests
     {
         [Fact]

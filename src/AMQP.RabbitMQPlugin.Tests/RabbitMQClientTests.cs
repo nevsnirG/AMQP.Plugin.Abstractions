@@ -4,11 +4,13 @@ using Moq;
 using RabbitMQ.Client;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
 using Xunit;
 
 namespace AMQP.RabbitMQPlugin.Tests
 {
+    [ExcludeFromCodeCoverage]
     public class RabbitMQClientTests
     {
         private readonly Mock<IModel> _modelMock;

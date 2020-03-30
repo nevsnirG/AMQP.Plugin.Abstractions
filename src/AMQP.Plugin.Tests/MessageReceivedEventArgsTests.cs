@@ -1,8 +1,10 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using Xunit;
 
 namespace AMQP.Plugin.Tests
 {
+    [ExcludeFromCodeCoverage]
     public class MessageReceivedEventArgsTests
     {
         [Fact]

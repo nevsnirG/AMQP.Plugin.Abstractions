@@ -3,10 +3,12 @@ using AMQP.Plugin.Builders;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using Xunit;
 
 namespace AMQP.RabbitMQPlugin.Tests
 {
+    [ExcludeFromCodeCoverage]
     public class AMQPBuilderExtensionTests
     {
         [Fact]

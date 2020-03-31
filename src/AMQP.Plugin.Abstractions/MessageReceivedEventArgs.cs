@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AMQP.Plugin
+namespace AMQP.Plugin.Abstractions
 {
     /// <summary>
     /// Provides data for the <see cref="OnMessageReceived"/> callback.

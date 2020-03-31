@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AMQP.Plugin
+namespace AMQP.Plugin.Abstractions
 {
     /// <summary>
     /// Responsible for publishing messages to the message broker.

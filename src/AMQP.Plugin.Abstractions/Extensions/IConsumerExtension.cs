@@ -1,4 +1,4 @@
-﻿namespace AMQP.Plugin.Extensions
+﻿namespace AMQP.Plugin.Abstractions.Extensions
 {
     /// <summary>
     /// Contains overloads for methods inside <see cref="IConsumer"/>.

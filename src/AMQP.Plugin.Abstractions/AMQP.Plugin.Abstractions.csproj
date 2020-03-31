@@ -10,7 +10,7 @@
     <Copyright>nevsnirG</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/nevsnirG/AMQP.Plugin.Abstractions</RepositoryUrl>
-    <PackageTags>1.0.0.</PackageTags>
+    <PackageTags>1.0.0</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

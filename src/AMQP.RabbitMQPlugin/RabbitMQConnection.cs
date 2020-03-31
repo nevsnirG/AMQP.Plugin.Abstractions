@@ -1,4 +1,4 @@
-﻿using AMQP.Plugin;
+﻿using AMQP.Plugin.Abstractions;
 using System;
 
 namespace AMQP.RabbitMQPlugin

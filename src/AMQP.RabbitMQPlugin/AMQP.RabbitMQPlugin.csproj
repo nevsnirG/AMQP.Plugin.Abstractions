@@ -9,7 +9,7 @@
     <Copyright>nevsnirG</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl></PackageProjectUrl>
-    <RepositoryUrl>https://github.com/nevsnirG/AMQP.Plugin/</RepositoryUrl>
+    <RepositoryUrl>https://github.com/nevsnirG/AMQP.Plugin.Abstractions</RepositoryUrl>
     <PackageTags>v1.0.0</PackageTags>
   </PropertyGroup>
 
@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AMQP.Plugin\AMQP.Plugin.csproj" />
+    <ProjectReference Include="..\AMQP.Plugin.Abstractions\AMQP.Plugin.Abstractions.csproj" />
   </ItemGroup>
 
   <ItemGroup>

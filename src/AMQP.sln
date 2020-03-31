@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMQP.Plugin", "AMQP.Plugin\AMQP.Plugin.csproj", "{2A63D229-3CAE-4104-AB53-0470DCB432CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMQP.Plugin.Abstractions", "AMQP.Plugin.Abstractions\AMQP.Plugin.Abstractions.csproj", "{2A63D229-3CAE-4104-AB53-0470DCB432CE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DF64C4D0-C51E-46C4-B0CE-F27F17A6662F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMQP.Plugin.Tests", "AMQP.Plugin.Tests\AMQP.Plugin.Tests.csproj", "{2B372533-095E-4AB0-B8E9-1B1ACBEEFCBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMQP.Plugin.Abstractions.Tests", "AMQP.Plugin.Abstractions.Tests\AMQP.Plugin.Abstractions.Tests.csproj", "{2B372533-095E-4AB0-B8E9-1B1ACBEEFCBC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMQP.RabbitMQPlugin", "AMQP.RabbitMQPlugin\AMQP.RabbitMQPlugin.csproj", "{D2BBE700-1DB5-421D-BD26-2A5D70E81BBC}"
 EndProject

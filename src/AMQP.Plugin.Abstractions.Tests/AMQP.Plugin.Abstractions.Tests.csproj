@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AMQP.Plugin\AMQP.Plugin.Abstractions.csproj" />
+    <ProjectReference Include="..\AMQP.Plugin.Abstractions\AMQP.Plugin.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

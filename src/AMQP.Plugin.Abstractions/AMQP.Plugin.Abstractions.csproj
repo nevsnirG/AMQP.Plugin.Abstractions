@@ -5,7 +5,7 @@
     <Version>1.0.0</Version>
     <PackageId>nevsnirG.AMQP.Plugin.Abstractions</PackageId>
     <Authors>nevsnirG</Authors>
-    <Company>nevsnirGnevsnirG</Company>
+    <Company>nevsnirG</Company>
     <Description>An abstraction layer for AMQP implementations.</Description>
     <Copyright>nevsnirG</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>

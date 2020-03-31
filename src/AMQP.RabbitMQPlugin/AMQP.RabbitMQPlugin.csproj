@@ -5,12 +5,12 @@
     <Version>1.0.0</Version>
     <PackageId>nevsnirG.AMQP.RabbitMQPlugin</PackageId>
     <Authors>nevsnirG</Authors>
-    <Description>A RabbitMQ implementation of the AMQP.Plugin framework.</Description>
+    <Description>A RabbitMQ implementation of the AMQP.Plugin.Abstractions framework.</Description>
     <Copyright>nevsnirG</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl>https://github.com/nevsnirG/AMQP.Plugin.Abstractions</RepositoryUrl>
-    <PackageTags>v1.0.0</PackageTags>
+    <PackageTags>1.0.0</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

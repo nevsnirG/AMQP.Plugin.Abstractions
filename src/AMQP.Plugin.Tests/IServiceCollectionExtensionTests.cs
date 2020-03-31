@@ -1,5 +1,5 @@
-﻿using AMQP.Plugin.Builders;
-using AMQP.Plugin.Extensions;
+﻿using AMQP.Plugin.Abstractions.Builders;
+using AMQP.Plugin.Abstractions.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using System;

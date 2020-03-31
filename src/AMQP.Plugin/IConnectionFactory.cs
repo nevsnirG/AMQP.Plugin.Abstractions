@@ -1,4 +1,4 @@
-﻿namespace AMQP.Plugin
+﻿namespace AMQP.Plugin.Abstractions
 {
     /// <summary>
     /// Responsible for establishing connections to the message broker.

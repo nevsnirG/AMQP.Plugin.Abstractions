@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace AMQP.Plugin.Builders
+namespace AMQP.Plugin.Abstractions.Builders
 {
     internal sealed class AMQPBuilder : IAMQPBuilder
     {

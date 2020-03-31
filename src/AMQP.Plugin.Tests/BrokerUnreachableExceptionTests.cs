@@ -1,4 +1,4 @@
-﻿using AMQP.Plugin.Exceptions;
+﻿using AMQP.Plugin.Abstractions.Exceptions;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using Xunit;

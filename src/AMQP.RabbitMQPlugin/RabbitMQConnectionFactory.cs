@@ -1,5 +1,5 @@
-﻿using AMQP.Plugin;
-using AMQP.Plugin.Exceptions;
+﻿using AMQP.Plugin.Abstractions;
+using AMQP.Plugin.Abstractions.Exceptions;
 using System;
 
 namespace AMQP.RabbitMQPlugin

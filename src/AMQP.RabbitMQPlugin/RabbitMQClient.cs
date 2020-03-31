@@ -1,4 +1,4 @@
-﻿using AMQP.Plugin;
+﻿using AMQP.Plugin.Abstractions;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;

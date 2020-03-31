@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace AMQP.Plugin.Builders
+namespace AMQP.Plugin.Abstractions.Builders
 {
     /// <summary>
     /// Represents a fluid builder pattern for building and configuring AMQP implementations.

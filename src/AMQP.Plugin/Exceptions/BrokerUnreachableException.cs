@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AMQP.Plugin.Exceptions
+namespace AMQP.Plugin.Abstractions.Exceptions
 {
     /// <summary>
     /// The exception that is thrown when a message broker could not be reached.

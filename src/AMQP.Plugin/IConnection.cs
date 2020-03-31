@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AMQP.Plugin
+namespace AMQP.Plugin.Abstractions
 {
     /// <summary>
     /// A connection to a message broker.

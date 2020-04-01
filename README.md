@@ -4,7 +4,7 @@ Plugin framework for AMQP implementations.
 Available on NuGet:
 
 <a href="https://www.nuget.org/packages/nevsnirG.AMQP.Plugin/">
-   <img src="https://img.shields.io/badge/nuget-v1.0.0-green" />
+   <img src="https://img.shields.io/badge/nuget-v1.0.1-green" />
 </a>
 
 ### Implementations

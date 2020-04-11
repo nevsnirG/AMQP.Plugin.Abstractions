@@ -1,4 +1,4 @@
-# AMQP.RabbitMQPlugin
+# AMQP.Plugin.RabbitMQ
 RabbitMQ implementation of the AMQP.Plugin library.
 
 <a href="https://www.nuget.org/packages/nevsnirG.AMQP.RabbitMQPlugin/">

@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using Xunit;
 
-namespace AMQP.RabbitMQPlugin.IntegrationTests
+namespace AMQP.Plugin.RabbitMQ.IntegrationTests
 {
     [ExcludeFromCodeCoverage]
     [Trait("Category", "SkipWhenLiveUnitTesting")]

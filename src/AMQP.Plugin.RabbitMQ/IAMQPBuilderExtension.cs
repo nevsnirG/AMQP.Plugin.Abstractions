@@ -3,7 +3,7 @@ using AMQP.Plugin.Abstractions.Builders;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace AMQP.RabbitMQPlugin
+namespace AMQP.Plugin.RabbitMQ
 {
     /// <summary>
     /// Contains extension methods for the <see cref="IAMQPBuilder"/>.

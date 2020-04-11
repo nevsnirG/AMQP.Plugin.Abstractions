@@ -3,8 +3,9 @@ using Moq;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using Xunit;
+using Rabbit = RabbitMQ.Client;
 
-namespace AMQP.RabbitMQPlugin.Tests
+namespace AMQP.Plugin.RabbitMQ.Tests
 {
     [ExcludeFromCodeCoverage]
     public class RabbitMQConnectionFactoryTests
@@ -40,7 +41,7 @@ namespace AMQP.RabbitMQPlugin.Tests
         public void Constructor_IConnectionFactoryNullInput_ArgumentNullException()
         {
             //Arrange
-            RabbitMQ.Client.IConnectionFactory connectionFactory = null;
+            Rabbit.IConnectionFactory connectionFactory = null;
 
             //Act
             var action = new Action(() => new RabbitMQConnectionFactory(connectionFactory));
@@ -72,9 +73,9 @@ namespace AMQP.RabbitMQPlugin.Tests
         public void CreateConnection_BrokerUnreachableException()
         {
             //Arrange
-            var connectionMock = new Mock<RabbitMQ.Client.IConnection>(MockBehavior.Strict);
-            var rabbitMqConnectionFactory = new Mock<RabbitMQ.Client.IConnectionFactory>(MockBehavior.Strict);
-            rabbitMqConnectionFactory.Setup((factory) => factory.CreateConnection()).Throws(new RabbitMQ.Client.Exceptions.BrokerUnreachableException(null));
+            var connectionMock = new Mock<Rabbit.IConnection>(MockBehavior.Strict);
+            var rabbitMqConnectionFactory = new Mock<Rabbit.IConnectionFactory>(MockBehavior.Strict);
+            rabbitMqConnectionFactory.Setup((factory) => factory.CreateConnection()).Throws(new Rabbit.Exceptions.BrokerUnreachableException(null));
             var connectionFactory = new RabbitMQConnectionFactory(rabbitMqConnectionFactory.Object);
 
             //Act
@@ -88,8 +89,8 @@ namespace AMQP.RabbitMQPlugin.Tests
         public void CreateConnection_Succes()
         {
             //Arrange
-            var connectionMock = new Mock<RabbitMQ.Client.IConnection>(MockBehavior.Strict);
-            var rabbitMqConnectionFactory = new Mock<RabbitMQ.Client.IConnectionFactory>(MockBehavior.Strict);
+            var connectionMock = new Mock<Rabbit.IConnection>(MockBehavior.Strict);
+            var rabbitMqConnectionFactory = new Mock<Rabbit.IConnectionFactory>(MockBehavior.Strict);
             rabbitMqConnectionFactory.Setup((factory) => factory.CreateConnection()).Returns(connectionMock.Object);
             var connectionFactory = new RabbitMQConnectionFactory(rabbitMqConnectionFactory.Object);
 

@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using Xunit;
 
-namespace AMQP.RabbitMQPlugin.Tests
+namespace AMQP.Plugin.RabbitMQ.Tests
 {
     [ExcludeFromCodeCoverage]
     public class AMQPBuilderExtensionTests

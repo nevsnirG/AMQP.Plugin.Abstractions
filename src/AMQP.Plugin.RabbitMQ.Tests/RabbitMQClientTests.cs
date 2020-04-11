@@ -1,41 +1,41 @@
 ﻿using AMQP.Plugin.Abstractions;
 using AMQP.Plugin.Abstractions.Extensions;
 using Moq;
-using RabbitMQ.Client;
+using Rabbit = RabbitMQ.Client;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
 using Xunit;
 
-namespace AMQP.RabbitMQPlugin.Tests
+namespace AMQP.Plugin.RabbitMQ.Tests
 {
     [ExcludeFromCodeCoverage]
     public class RabbitMQClientTests
     {
-        private readonly Mock<IModel> _modelMock;
-        private readonly Mock<RabbitMQ.Client.IConnection> _connectionMock;
-        private readonly Expression<Action<IModel>> _disposeExpression;
-        private readonly Expression<Func<IModel, bool>> _isClosedExpression;
-        private readonly Expression<Func<IModel, QueueDeclareOk>> _queueDeclareExpression;
-        private readonly Expression<Func<IModel, string>> _basicConsumeExpression;
-        private readonly Expression<Func<RabbitMQ.Client.IConnection, IModel>> _createModelExpression;
-        private readonly Expression<Action<IModel>> _basicPublishExpression;
-        private readonly Expression<Action<IModel>> _queueBindExpression;
-        private readonly Expression<Action<IModel>> _exchangeDeclareExpression;
+        private readonly Mock<Rabbit.IModel> _modelMock;
+        private readonly Mock<Rabbit.IConnection> _connectionMock;
+        private readonly Expression<Action<Rabbit.IModel>> _disposeExpression;
+        private readonly Expression<Func<Rabbit.IModel, bool>> _isClosedExpression;
+        private readonly Expression<Func<Rabbit.IModel, Rabbit.QueueDeclareOk>> _queueDeclareExpression;
+        private readonly Expression<Func<Rabbit.IModel, string>> _basicConsumeExpression;
+        private readonly Expression<Func<Rabbit.IConnection, Rabbit.IModel>> _createModelExpression;
+        private readonly Expression<Action<Rabbit.IModel>> _basicPublishExpression;
+        private readonly Expression<Action<Rabbit.IModel>> _queueBindExpression;
+        private readonly Expression<Action<Rabbit.IModel>> _exchangeDeclareExpression;
 
         public RabbitMQClientTests()
         {
             _disposeExpression = (model) => model.Dispose();
             _isClosedExpression = (model) => model.IsClosed;
             _queueDeclareExpression = (model) => model.QueueDeclare(It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<bool>(), It.IsAny<bool>(), It.IsAny<IDictionary<string, object>>());
-            _basicConsumeExpression = (model) => model.BasicConsume(It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<bool>(), It.IsAny<IDictionary<string, object>>(), It.IsAny<IBasicConsumer>());
+            _basicConsumeExpression = (model) => model.BasicConsume(It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<bool>(), It.IsAny<IDictionary<string, object>>(), It.IsAny<Rabbit.IBasicConsumer>());
             _createModelExpression = (connection) => connection.CreateModel();
-            _basicPublishExpression = (model) => model.BasicPublish(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<IBasicProperties>(), It.IsAny<byte[]>());
+            _basicPublishExpression = (model) => model.BasicPublish(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<Rabbit.IBasicProperties>(), It.IsAny<byte[]>());
             _queueBindExpression = (model) => model.QueueBind(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<IDictionary<string, object>>());
             _exchangeDeclareExpression = (model) => model.ExchangeDeclare(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<bool>(), It.IsAny<IDictionary<string, object>>());
 
-            _modelMock = new Mock<IModel>(MockBehavior.Strict);
+            _modelMock = new Mock<Rabbit.IModel>(MockBehavior.Strict);
             _modelMock.Setup(_disposeExpression)
                 .Verifiable();
             _modelMock.Setup(_queueDeclareExpression)
@@ -44,7 +44,7 @@ namespace AMQP.RabbitMQPlugin.Tests
                     if (string.IsNullOrEmpty(q))
                         q = $"queue-{Guid.NewGuid().ToString("N")}";
 
-                    return new QueueDeclareOk(q, 0, 0);
+                    return new Rabbit.QueueDeclareOk(q, 0, 0);
                 })
                 .Verifiable();
             _modelMock.Setup(_basicConsumeExpression)
@@ -57,7 +57,7 @@ namespace AMQP.RabbitMQPlugin.Tests
             _modelMock.Setup(_exchangeDeclareExpression)
                 .Verifiable();
 
-            _connectionMock = new Mock<RabbitMQ.Client.IConnection>(MockBehavior.Strict);
+            _connectionMock = new Mock<Rabbit.IConnection>(MockBehavior.Strict);
             _connectionMock.Setup(_createModelExpression)
                 .Returns(_modelMock.Object)
                 .Verifiable();
@@ -73,7 +73,7 @@ namespace AMQP.RabbitMQPlugin.Tests
         {
             //Arrange
             string routingKey = nameof(routingKey);
-            IModel model = null;
+            Rabbit.IModel model = null;
 
             //Act
             var action = new Action(() => new RabbitMQClient(exchange, routingKey, model));
@@ -92,7 +92,7 @@ namespace AMQP.RabbitMQPlugin.Tests
         {
             //Arrange
             string exchange = nameof(exchange);
-            IModel model = null;
+            Rabbit.IModel model = null;
 
             //Act
             var action = new Action(() => new RabbitMQClient(exchange, routingKey, model));
@@ -107,7 +107,7 @@ namespace AMQP.RabbitMQPlugin.Tests
             //Arrange
             string exchange = nameof(exchange);
             string routingKey = nameof(routingKey);
-            IModel model = null;
+            Rabbit.IModel model = null;
 
             //Act
             var action = new Action(() => new RabbitMQClient(exchange, routingKey, model));

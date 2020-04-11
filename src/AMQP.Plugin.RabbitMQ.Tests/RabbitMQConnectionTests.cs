@@ -2,8 +2,9 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using Xunit;
+using Rabbit = RabbitMQ.Client;
 
-namespace AMQP.RabbitMQPlugin.Tests
+namespace AMQP.Plugin.RabbitMQ.Tests
 {
     [ExcludeFromCodeCoverage]
     public class RabbitMQConnectionTests
@@ -28,7 +29,7 @@ namespace AMQP.RabbitMQPlugin.Tests
         {
             //Arrange
             string exchange = nameof(exchange);
-            RabbitMQ.Client.IConnection connection = null;
+            Rabbit.IConnection connection = null;
 
             //Act
             var action = new Action(() => new RabbitMQConnection(exchange, connection));
@@ -42,7 +43,7 @@ namespace AMQP.RabbitMQPlugin.Tests
         {
             //Arrange
             string exchange = nameof(exchange);
-            var connectionMock = new Mock<RabbitMQ.Client.IConnection>(MockBehavior.Loose);
+            var connectionMock = new Mock<Rabbit.IConnection>(MockBehavior.Loose);
             var connection = new RabbitMQConnection(exchange, connectionMock.Object);
             string routingKey = nameof(routingKey);
 

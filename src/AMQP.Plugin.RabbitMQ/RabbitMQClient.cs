@@ -1,9 +1,9 @@
 ﻿using AMQP.Plugin.Abstractions;
+using System;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using System;
 
-namespace AMQP.RabbitMQPlugin
+namespace AMQP.Plugin.RabbitMQ
 {
     internal sealed class RabbitMQClient : IConsumer, IPublisher
     {

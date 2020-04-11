@@ -1,12 +1,13 @@
 ﻿using AMQP.Plugin.Abstractions;
 using AMQP.Plugin.Abstractions.Exceptions;
+using Rabbit = RabbitMQ.Client;
 using System;
 
-namespace AMQP.RabbitMQPlugin
+namespace AMQP.Plugin.RabbitMQ
 {
     internal sealed class RabbitMQConnectionFactory : IConnectionFactory
     {
-        private readonly RabbitMQ.Client.IConnectionFactory _connectionFactory;
+        private readonly Rabbit.IConnectionFactory _connectionFactory;
 
         public RabbitMQConnectionFactory(string connectionString)
         {
@@ -21,13 +22,13 @@ namespace AMQP.RabbitMQPlugin
             else
                 throw new ArgumentException("The specified connection string is not a valid URI.", nameof(connectionString));
 
-            _connectionFactory = new RabbitMQ.Client.ConnectionFactory
+            _connectionFactory = new Rabbit.ConnectionFactory
             {
                 Uri = connectionUri
             };
         }
 
-        public RabbitMQConnectionFactory(RabbitMQ.Client.IConnectionFactory connectionFactory)
+        public RabbitMQConnectionFactory(Rabbit.IConnectionFactory connectionFactory)
         {
             _connectionFactory = connectionFactory ?? throw new ArgumentNullException(nameof(connectionFactory));
         }
@@ -42,7 +43,7 @@ namespace AMQP.RabbitMQPlugin
                 var connection = _connectionFactory.CreateConnection();
                 return new RabbitMQConnection(exchange, connection);
             }
-            catch (RabbitMQ.Client.Exceptions.BrokerUnreachableException ex)
+            catch (Rabbit.Exceptions.BrokerUnreachableException ex)
             {
                 throw new BrokerUnreachableException(ex.Message, ex);
             }

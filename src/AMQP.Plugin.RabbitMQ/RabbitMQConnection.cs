@@ -1,15 +1,16 @@
 ﻿using AMQP.Plugin.Abstractions;
+using Rabbit = RabbitMQ.Client;
 using System;
 
-namespace AMQP.RabbitMQPlugin
+namespace AMQP.Plugin.RabbitMQ
 {
     internal sealed class RabbitMQConnection : IConnection
     {
         private readonly string _exchange;
 
-        private RabbitMQ.Client.IConnection _connection;
+        private Rabbit.IConnection _connection;
 
-        public RabbitMQConnection(string exchange, RabbitMQ.Client.IConnection connection)
+        public RabbitMQConnection(string exchange, Rabbit.IConnection connection)
         {
             if (string.IsNullOrWhiteSpace(exchange))
                 throw new ArgumentNullException(nameof(exchange));
@@ -34,7 +35,7 @@ namespace AMQP.RabbitMQPlugin
                 throw new ObjectDisposedException(nameof(_connection));
             //TODO - Handle possible CreateModel exceptions.
             var model = _connection.CreateModel();
-            model.ExchangeDeclare(_exchange, RabbitMQ.Client.ExchangeType.Topic, false, false, null); //TODO - Handle possible exceptions.
+            model.ExchangeDeclare(_exchange, Rabbit.ExchangeType.Topic, false, false, null); //TODO - Handle possible exceptions.
             return new RabbitMQClient(_exchange, routingKey, model);
         }
 

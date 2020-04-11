@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DF64C4D0-C51E-46C4-B0CE-F27F17A6662F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMQP.RabbitMQPlugin", "AMQP.RabbitMQPlugin\AMQP.RabbitMQPlugin.csproj", "{D2BBE700-1DB5-421D-BD26-2A5D70E81BBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMQP.Plugin.RabbitMQ", "AMQP.Plugin.RabbitMQ\AMQP.Plugin.RabbitMQ.csproj", "{D2BBE700-1DB5-421D-BD26-2A5D70E81BBC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{3DCE0A93-78AF-4EDD-A71C-2E04E6413E8C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMQP.RabbitMQPlugin.Tests", "AMQP.RabbitMQPlugin.Tests\AMQP.RabbitMQPlugin.Tests.csproj", "{15A74D8E-3CA9-49FD-ACB3-38D7A9E5A399}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMQP.Plugin.RabbitMQ.Tests", "AMQP.Plugin.RabbitMQ.Tests\AMQP.Plugin.RabbitMQ.Tests.csproj", "{15A74D8E-3CA9-49FD-ACB3-38D7A9E5A399}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMQP.RabbitMQPlugin.IntegrationTests", "AMQP.RabbitMQPlugin.IntegrationTests\AMQP.RabbitMQPlugin.IntegrationTests.csproj", "{B5396241-80E6-4DF6-BCA0-8E26F9C11627}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMQP.Plugin.RabbitMQ.IntegrationTests", "AMQP.Plugin.RabbitMQ.IntegrationTests\AMQP.Plugin.RabbitMQ.IntegrationTests.csproj", "{B5396241-80E6-4DF6-BCA0-8E26F9C11627}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMQP.Plugin.Abstractions", "AMQP.Plugin.Abstractions\AMQP.Plugin.Abstractions.csproj", "{F6193EBC-FC4C-45EE-952E-AC2C909F82B3}"
 EndProject

@@ -5,7 +5,7 @@ using System;
 
 namespace AMQP.Plugin.RabbitMQ
 {
-    internal sealed class RabbitMQConnectionFactory : IConnectionFactory
+    public sealed class RabbitMQConnectionFactory : IConnectionFactory
     {
         private readonly Rabbit.IConnectionFactory _connectionFactory;
 

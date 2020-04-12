@@ -9,7 +9,7 @@
     <Copyright>nevsnirG</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl></PackageProjectUrl>
-    <RepositoryUrl>https://github.com/nevsnirG/AMQP.Plugin.Abstractions/tree/master/src/AMQP.RabbitMQPlugin</RepositoryUrl>
+    <RepositoryUrl>https://github.com/nevsnirG/AMQP.Plugin.Abstractions/tree/master/src/AMQP.Plugin.RabbitMQ</RepositoryUrl>
     <PackageTags>1.0.1</PackageTags>
     <Product>AMQP.Plugin.RabbitMQ</Product>
     <RootNamespace>AMQP.Plugin.RabbitMQ</RootNamespace>

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <Version>1.0.1</Version>
+    <Version>1.0.3</Version>
     <PackageId>nevsnirG.AMQP.Plugin.RabbitMQ</PackageId>
     <Authors>nevsnirG</Authors>
     <Description>A RabbitMQ implementation of the AMQP.Plugin.Abstractions framework.</Description>
@@ -10,9 +10,10 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl>https://github.com/nevsnirG/AMQP.Plugin.Abstractions/tree/master/src/AMQP.Plugin.RabbitMQ</RepositoryUrl>
-    <PackageTags>1.0.1</PackageTags>
+    <PackageTags>amqp</PackageTags>
     <Product>AMQP.Plugin.RabbitMQ</Product>
     <RootNamespace>AMQP.Plugin.RabbitMQ</RootNamespace>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,5 +1,4 @@
 using AMQP.Plugin.Abstractions;
-using AMQP.Plugin.Abstractions.Extensions;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using Xunit;

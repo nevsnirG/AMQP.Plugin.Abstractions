@@ -1,5 +1,4 @@
 ﻿using AMQP.Plugin.Abstractions;
-using AMQP.Plugin.Abstractions.Extensions;
 using Moq;
 using Rabbit = RabbitMQ.Client;
 using System;

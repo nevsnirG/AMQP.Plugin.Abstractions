@@ -57,7 +57,7 @@ namespace AMQP.Plugin.RabbitMQ
                 _model.BasicAck(e.DeliveryTag, false);
 
                 //TODO - Add other properties from original eventargs.
-                var eventArgs = new MessageReceivedEventArgs(e.Body);
+                var eventArgs = new MessageReceivedEventArgs(e.Body.ToArray());
                 onMessageReceived.Invoke(this, eventArgs);
             };
             //TODO - Handle possible exceptions thrown by BasicConsume method.

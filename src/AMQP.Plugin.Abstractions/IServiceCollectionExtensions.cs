@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace AMQP.Plugin.Abstractions.Extensions
+namespace AMQP.Plugin.Abstractions
 {
     /// <summary>
     /// Contains extension methods for the <see cref="IServiceCollection"/> interface.

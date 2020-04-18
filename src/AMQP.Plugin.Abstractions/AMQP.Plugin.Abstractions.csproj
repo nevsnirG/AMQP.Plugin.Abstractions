@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <PackageId>nevsnirG.AMQP.Plugin.Abstractions</PackageId>
     <Authors>nevsnirG</Authors>
     <Company>nevsnirG</Company>
@@ -22,10 +22,6 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Extensions\" />
   </ItemGroup>
 
 </Project>
